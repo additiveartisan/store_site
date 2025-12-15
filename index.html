@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Additive Artisan - Cutsie 3D printing with a personal touch. Handcrafted 3D printed products for MTG players and tabletop gaming enthusiasts."
+        />
+        <meta name="author" content="Additive Artisan" />
+        <meta name="theme-color" content="#84cdc7" />
+        <title>Additive Artisan | Cutsie 3D Printing</title>
+
+        <!-- Web App Manifest for PWA -->
+        <link rel="manifest" href="/manifest.json" />
+
+        <!-- Content Security Policy -->
+        <meta http-equiv="Content-Security-Policy" content="
+            default-src 'self';
+            script-src 'self' https://unpkg.com https://fonts.googleapis.com;
+            style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+            img-src 'self' https://res.cloudinary.com data:;
+            font-src 'self' https://fonts.gstatic.com;
+            connect-src 'self' https://*.workers.dev;
+            manifest-src 'self';
+            frame-ancestors 'none';
+            base-uri 'self';
+            form-action 'self';
+        ">
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://www.additiveartisan.com/" />
+
+        <!-- Robots -->
+        <meta name="robots" content="index, follow" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.additiveartisan.com/" />
+        <meta property="og:title" content="Additive Artisan | Handcrafted 3D Printed Products for Gamers" />
+        <meta property="og:description" content="Cutsie 3D printing with a personal touch. Handcrafted products for MTG players and tabletop gaming enthusiasts." />
+        <meta property="og:image" content="https://res.cloudinary.com/dvupmrtsm/image/upload/w_1200,h_630,c_fill/v1765384928/logo_bjbaeu.png" />
+        <meta property="og:site_name" content="Additive Artisan" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Additive Artisan | Handcrafted 3D Printed Products" />
+        <meta name="twitter:description" content="Cutsie 3D printing for MTG and tabletop gaming." />
+        <meta name="twitter:image" content="https://res.cloudinary.com/dvupmrtsm/image/upload/w_1200,h_627,c_fill/v1765384928/logo_bjbaeu.png" />
+
+        <!-- Favicon (hosted on Cloudinary) -->
+        <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dvupmrtsm/image/upload/v1765384929/favicon_nwcktp.ico" sizes="48x48" />
+        <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dvupmrtsm/image/upload/v1765384929/favicon_nwcktp.ico" sizes="32x32" />
+        <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dvupmrtsm/image/upload/v1765384929/favicon_nwcktp.ico" sizes="16x16" />
+        <link rel="shortcut icon" href="https://res.cloudinary.com/dvupmrtsm/image/upload/v1765384929/favicon_nwcktp.ico" />
+
+        <!-- Preload hero image for better LCP (Largest Contentful Paint) -->
+        <link rel="preload" href="https://res.cloudinary.com/dvupmrtsm/image/upload/f_auto,q_auto,w_300/v1765384928/logo_bjbaeu.png" as="image" fetchpriority="high" />
+
+        <!-- Google Fonts - Sorts Mill Goudy, Indie Flower, Patrick Hand & La Belle Aurore -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=La+Belle+Aurore&family=Patrick+Hand&family=Sorts+Mill+Goudy:ital@0;1&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Google Model Viewer for 3D products -->
+        <script
+            type="module"
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+        ></script>
+
+        <!-- Lottie Player for order status animations -->
+        <!-- Uncomment when using Lottie mode in js/config.js -->
+        <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+
+        <link rel="stylesheet" href="styles.css" />
+
+        <!-- Structured Data (JSON-LD) for SEO -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://www.additiveartisan.com/#organization",
+                    "name": "Additive Artisan",
+                    "url": "https://www.additiveartisan.com",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://res.cloudinary.com/dvupmrtsm/image/upload/v1765384928/logo_bjbaeu.png"
+                    },
+                    "description": "Cutsie 3D printing with a personal touch.",
+                    "founder": {
+                        "@type": "Person",
+                        "name": "Rob Sears"
+                    },
+                    "email": "rob@additiveartisan.com"
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.additiveartisan.com/#products",
+                    "name": "Additive Artisan Products",
+                    "itemListElement": [
+                        {
+                            "@type": "Product",
+                            "position": 1,
+                            "name": "Modular Counter Wheel",
+                            "description": "Magnetic-top counter wheel with replaceable covers",
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "15.00",
+                                "priceCurrency": "USD",
+                                "availability": "https://schema.org/InStock",
+                                "url": "https://etsy.com/shop/AdditiveArtisanUS"
+                            }
+                        },
+                        {
+                            "@type": "Product",
+                            "position": 2,
+                            "name": "Gaming in Progress Sign",
+                            "description": "Warning sign for intense MTG battles",
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "12.00",
+                                "priceCurrency": "USD",
+                                "availability": "https://schema.org/InStock",
+                                "url": "https://etsy.com/shop/AdditiveArtisanUS"
+                            }
+                        },
+                        {
+                            "@type": "Product",
+                            "position": 3,
+                            "name": "Dice Tower",
+                            "description": "Custom dice tower for tabletop gaming",
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "25.00",
+                                "priceCurrency": "USD",
+                                "availability": "https://schema.org/InStock",
+                                "url": "https://etsy.com/shop/AdditiveArtisanUS"
+                            }
+                        },
+                        {
+                            "@type": "Product",
+                            "position": 4,
+                            "name": "Custom Commission",
+                            "description": "Order a custom 3D printed piece designed just for you",
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "50.00",
+                                "priceCurrency": "USD",
+                                "availability": "https://schema.org/InStock",
+                                "url": "https://etsy.com/shop/AdditiveArtisanUS"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+        </script>
+    </head>
+    <body>
+        <!-- Skip to main content for accessibility -->
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+        <!-- Navigation -->
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a
+                    href="#home"
+                    class="nav-logo"
+                    aria-label="Additive Artisan Home"
+                >
+                    <span class="logo-text">Additive Artisan</span>
+                </a>
+                <button
+                    type="button"
+                    class="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                >
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-links">
+                    <li>
+                        <a
+                            href="#home"
+                            class="nav-link active"
+                            data-section="home"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#products"
+                            class="nav-link"
+                            data-section="products"
+                            >Products</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#track" class="nav-link" data-section="track"
+                            >Track Order</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#about" class="nav-link" data-section="about"
+                            >About</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#contact"
+                            class="nav-link"
+                            data-section="contact"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+                <button
+                    type="button"
+                    class="theme-toggle"
+                    id="theme-toggle"
+                    aria-label="Toggle dark mode"
+                >
+                    <div class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                    <div class="slider"></div>
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main id="main-content" class="main-content">
+            <!-- Home Section -->
+            <section id="home" class="section section--home active">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1 class="sr-only">Additive Artisan - Cutsie 3D Printing</h1>
+                        <div class="hero-title">
+                            <img src="https://res.cloudinary.com/dvupmrtsm/image/upload/f_auto,q_auto,w_300,dpr_auto/v1765384928/logo_bjbaeu.png" alt="Additive Artisan" class="hero-logo-image" loading="eager" width="300" height="300" />
+                        </div>
+                        <p class="hero-tagline">where prints meet play</p>
+                        <a
+                            href="#products"
+                            class="btn btn--primary"
+                            data-section="products"
+                            aria-label="Browse our product catalog"
+                            >Shop Now</a
+                        >
+                    </div>
+                </div>
+
+                <!-- Featured Products Preview -->
+                <div class="featured-section">
+                    <h2 class="section-title">Featured Creations</h2>
+                    <div id="featured-grid" class="featured-grid">
+                        <!-- Featured items will be dynamically loaded -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products" class="section section--products">
+                <div class="section-container">
+                    <h1 class="section-title">Our Products</h1>
+                    <p class="section-subtitle">
+                        Handcrafted 3D prints for gamers and collectors
+                    </p>
+
+                    <!-- Product Categories Filter (dynamically generated) -->
+                    <div class="product-filters">
+                        <!-- Filter buttons will be dynamically loaded from products.json -->
+                    </div>
+
+                    <!-- Product Gallery Grid -->
+                    <div id="product-grid" class="product-grid">
+                        <!-- Products will be dynamically loaded -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Track Order Section -->
+            <section id="track" class="section section--track">
+                <div class="section-container">
+                    <h1 class="section-title">Track Your Order</h1>
+                    <p class="section-subtitle">
+                        Follow your print's journey from creation to delivery
+                    </p>
+
+                    <!-- Order Search Form -->
+                    <div class="track-form-container">
+                        <form id="order-search-form" class="track-form">
+                            <div class="form-group">
+                                <label for="order-id">Order Number</label>
+                                <input
+                                    type="text"
+                                    id="order-id"
+                                    name="order-id"
+                                    placeholder="e.g., AA-2024-0047"
+                                    pattern="[A-Z]{2}-\d{4}-\d{4}"
+                                    title="Format: AA-2024-0047 (2 uppercase letters, dash, 4 digits, dash, 4 digits)"
+                                    required
+                                />
+                            </div>
+                            <!-- Email input hidden (Etsy doesn't provide customer emails) -->
+                            <!-- Remove 'hidden' class below to re-enable email validation -->
+                            <div class="form-group hidden">
+                                <label for="order-email">Email Address</label>
+                                <input
+                                    type="email"
+                                    id="order-email"
+                                    name="order-email"
+                                    placeholder="your@email.com"
+                                />
+                            </div>
+                            <button type="submit" class="btn btn--primary" aria-label="Submit order tracking request">
+                                Track Order
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Order Status Display (hidden by default) -->
+                    <div id="order-status" class="order-status hidden" aria-live="polite" aria-atomic="true">
+                        <!-- Artie Animation Placeholder -->
+                        <div class="status-animation">
+                            <div class="artie-animation-placeholder">
+                                <span class="mascot-emoji" id="status-emoji">🐱</span>
+                            </div>
+                        </div>
+
+                        <!-- Status Message -->
+                        <div class="status-info">
+                            <h2 class="status-title">Order Status</h2>
+                            <p class="status-message">
+                                Your order status will appear here
+                            </p>
+                        </div>
+
+                        <!-- Order Details -->
+                        <div class="order-details hidden" id="order-details">
+                            <p><strong>Product:</strong> <span id="order-product"></span></p>
+                            <p><strong>Order Date:</strong> <span id="order-date"></span></p>
+                            <p class="tracking-number hidden" id="tracking-container">
+                                <strong>Tracking Number:</strong>
+                                <span id="tracking-number"></span>
+                            </p>
+                        </div>
+
+                        <!-- Status Timeline -->
+                        <div class="status-timeline">
+                            <div class="timeline-step" data-step="received">
+                                <div class="step-icon">1</div>
+                                <span class="step-label">Order Received</span>
+                            </div>
+                            <div class="timeline-step" data-step="queue">
+                                <div class="step-icon">2</div>
+                                <span class="step-label">In Queue</span>
+                            </div>
+                            <div class="timeline-step" data-step="printing">
+                                <div class="step-icon">3</div>
+                                <span class="step-label">Printing</span>
+                            </div>
+                            <div class="timeline-step" data-step="processing">
+                                <div class="step-icon">4</div>
+                                <span class="step-label">Post-Processing</span>
+                            </div>
+                            <div class="timeline-step" data-step="quality">
+                                <div class="step-icon">5</div>
+                                <span class="step-label">Quality Control</span>
+                            </div>
+                            <div class="timeline-step" data-step="packaging">
+                                <div class="step-icon">6</div>
+                                <span class="step-label">Packaging</span>
+                            </div>
+                            <div class="timeline-step" data-step="shipped">
+                                <div class="step-icon">7</div>
+                                <span class="step-label">Shipped</span>
+                            </div>
+                            <div class="timeline-step" data-step="delivered">
+                                <div class="step-icon">8</div>
+                                <span class="step-label">Delivered</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section section--about">
+                <div class="section-container">
+                    <h1 class="section-title">About Additive Artisan</h1>
+
+                    <div class="about-content">
+                        <!-- Story Section -->
+                        <div class="about-story">
+                            <div class="about-text">
+                                <h2>Our Story</h2>
+                                <p>
+                                    Welcome to Additive Artisan, where cute
+                                    meets craft! I'm Rob, and I create cutsie 3D
+                                    printed products with a personal touch.
+                                </p>
+                                <p>
+                                    Every print is crafted with care, one layer
+                                    at a time. Whether you're looking for unique
+                                    MTG accessories, fun gaming props, or custom
+                                    creations, each piece is made with attention
+                                    to detail and a whole lot of heart.
+                                </p>
+                                <div class="quote">
+                                    Robert Sears
+                                </div>
+                            </div>
+                            <div class="about-image-placeholder">
+                                <img src="https://res.cloudinary.com/dvupmrtsm/image/upload/f_auto,q_auto,w_234,dpr_auto/v1765384928/logo_bjbaeu.png" alt="Additive Artisan logo" class="artie-image" loading="lazy" width="234" height="234" />
+                            </div>
+                        </div>
+
+                        <!-- Meet Artie Section -->
+                        <div class="about-story">
+                            <div class="about-image-placeholder">
+                                <img src="https://res.cloudinary.com/dvupmrtsm/image/upload/f_auto,q_auto,w_400,dpr_auto/v1765384928/artie_o6befl.png" alt="Artie the mascot" class="artie-image-large" loading="lazy" width="400" height="400" />
+                            </div>
+                            <div class="about-text">
+                                <h2>Meet Artie - Your Craft Companion</h2>
+                                <p>
+                                    Artie is our beloved mascot - an all-black
+                                    craft-maker cat inspired by the charm of
+                                    1950s Hanna-Barbera cartoons. With his blue
+                                    denim apron, amber stitching, and trusty
+                                    pocket protector full of pens and pencils,
+                                    he embodies the spirit of handmade
+                                    creativity.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Studio Tour Section -->
+                        <div class="studio-section">
+                            <h2>The Workshop</h2>
+                            <p>
+                                Take a peek behind the scenes where the magic
+                                happens.
+                            </p>
+                            <div class="studio-tour-placeholder">
+                                <!-- Luma AI embed will go here -->
+                                <span>Studio Tour Coming Soon</span>
+                                <p>
+                                    An immersive 3D tour of our
+                                    workspace
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Values Section -->
+                        <div class="values-section">
+                            <h2>What We Stand For</h2>
+                            <div class="values-grid">
+                                <div class="value-card">
+                                    <span class="value-icon">🎨</span>
+                                    <h3>Handcrafted Quality</h3>
+                                    <p>
+                                        Every piece is made with attention to
+                                        detail and craftsmanship
+                                    </p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">💝</span>
+                                    <h3>Personal Touch</h3>
+                                    <p>
+                                        Direct communication and care for every
+                                        customer
+                                    </p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">🎮</span>
+                                    <h3>Gamer at Heart</h3>
+                                    <p>
+                                        Products designed by gamers, for gamers
+                                    </p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">🐱</span>
+                                    <h3>Cutsie & Fun</h3>
+                                    <p>
+                                        Because everything is better with a
+                                        touch of whimsy
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section section--contact">
+                <div class="section-container">
+                    <h1 class="section-title">Get In Touch</h1>
+                    <p class="section-subtitle">
+                        Questions? Custom requests? Just want to chat? I'd love
+                        to hear from you!
+                    </p>
+
+                    <div class="contact-content">
+                        <!-- Contact Form -->
+                        <div class="contact-form-container">
+                            <form id="contact-form" class="contact-form">
+                                <div class="form-group">
+                                    <label for="contact-name">Name</label>
+                                    <input
+                                        type="text"
+                                        id="contact-name"
+                                        name="name"
+                                        placeholder="Your name"
+                                        autocomplete="name"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email</label>
+                                    <input
+                                        type="email"
+                                        id="contact-email"
+                                        name="email"
+                                        placeholder="your@email.com"
+                                        autocomplete="email"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-subject">Subject</label>
+                                    <select
+                                        id="contact-subject"
+                                        name="subject"
+                                        required
+                                    >
+                                        <option value="" disabled selected>
+                                            Select a topic...
+                                        </option>
+                                        <option value="order">
+                                            Order Question
+                                        </option>
+                                        <option value="custom">
+                                            Custom Request
+                                        </option>
+                                        <option value="feedback">
+                                            Feedback
+                                        </option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-message">Message</label>
+                                    <textarea
+                                        id="contact-message"
+                                        name="message"
+                                        placeholder="Tell me about your project or question..."
+                                        rows="5"
+                                        required
+                                    ></textarea>
+                                </div>
+                                <button type="submit" class="btn btn--primary" aria-label="Submit contact form">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="contact-info">
+                            <div class="info-card">
+                                <h3>Direct Contact</h3>
+                                <p>
+                                    <a href="mailto:rob@additiveartisan.com"
+                                        >rob@additiveartisan.com</a
+                                    >
+                                </p>
+                            </div>
+
+                            <div class="info-card">
+                                <h3>Shop</h3>
+                                <p>
+                                    <a
+                                        href="https://etsy.com/shop/AdditiveArtisanUS"
+                                        target="_blank"
+                                        rel="noopener"
+                                        >etsy.com/shop/AdditiveArtisanUS</a
+                                    >
+                                </p>
+                            </div>
+
+                            <div class="info-card">
+                                <h3>Follow Along</h3>
+                                <div class="social-links">
+                                    <a
+                                        href="https://tiktok.com/@additiveartisan"
+                                        class="social-link"
+                                        aria-label="Follow us on TikTok"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <svg
+                                            class="social-icon"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                            width="24"
+                                            height="24"
+                                        >
+                                            <path
+                                                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+                                            />
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="https://pinterest.com/additiveartisan"
+                                        class="social-link"
+                                        aria-label="Follow us on Pinterest"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <svg
+                                            class="social-icon"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                            width="24"
+                                            height="24"
+                                        >
+                                            <path
+                                                d="M12 0a12 12 0 0 0-4.37 23.17c-.1-.94-.2-2.4.04-3.44l1.4-5.96s-.37-.74-.37-1.82c0-1.7 1-2.97 2.23-2.97 1.05 0 1.56.8 1.56 1.74 0 1.06-.68 2.64-1.03 4.1-.29 1.24.62 2.26 1.84 2.26 2.22 0 3.92-2.34 3.92-5.7 0-2.98-2.14-5.07-5.2-5.07-3.54 0-5.62 2.66-5.62 5.4 0 1.07.41 2.22.93 2.85a.37.37 0 0 1 .08.36l-.34 1.4c-.06.23-.18.28-.42.17-1.56-.73-2.54-3-2.54-4.83 0-3.93 2.86-7.55 8.24-7.55 4.33 0 7.7 3.08 7.7 7.2 0 4.3-2.71 7.76-6.48 7.76-1.26 0-2.45-.66-2.86-1.44l-.78 2.96c-.28 1.08-1.04 2.44-1.55 3.27A12 12 0 1 0 12 0z"
+                                            />
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="https://instagram.com/additiveartisan"
+                                        class="social-link"
+                                        aria-label="Follow us on Instagram"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <svg
+                                            class="social-icon"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                            width="24"
+                                            height="24"
+                                        >
+                                            <path
+                                                d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.4 2.23.07 1.27.08 1.65.08 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23a3.72 3.72 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.4-1.27.07-1.65.08-4.85.08s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.4-2.23-.07-1.27-.08-1.65-.08-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.4 1.27-.07 1.65-.08 4.85-.08M12 0C8.74 0 8.33.01 7.05.07 5.78.14 4.9.35 4.14.66a5.88 5.88 0 0 0-2.13 1.39A5.88 5.88 0 0 0 .66 4.14C.35 4.9.14 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.07 1.27.28 2.15.59 2.91.32.8.75 1.47 1.39 2.13a5.88 5.88 0 0 0 2.13 1.39c.76.31 1.64.52 2.91.59 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.07 2.15-.28 2.91-.59a5.88 5.88 0 0 0 2.13-1.39 5.88 5.88 0 0 0 1.39-2.13c.31-.76.52-1.64.59-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.07-1.27-.28-2.15-.59-2.91a5.88 5.88 0 0 0-1.39-2.13A5.88 5.88 0 0 0 19.86.66c-.76-.31-1.64-.52-2.91-.59C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="info-card brand-signature">
+                                <p class="signature-tagline">
+                                    crafted with care, one layer at a time.
+                                </p>
+                                <!-- Optional: Add handwritten signature images here -->
+                                <!-- Light mode: https://res.cloudinary.com/dvupmrtsm/image/upload/v1765384928/signature_light_nv8lcn.png -->
+                                <!-- Dark mode: https://res.cloudinary.com/dvupmrtsm/image/upload/v1765384928/signature_dark_ndq3kg.png -->
+                                <img src="https://res.cloudinary.com/dvupmrtsm/image/upload/f_auto,q_auto,w_150,dpr_auto/v1765384928/additive_artisan_D20_w4lued.png" alt="D20 dice" class="contact-d20-icon" loading="lazy" width="150" height="150" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <span class="footer-logo">Additive Artisan</span>
+                    <p class="footer-tagline">
+                        purrfectly printed, just for you.
+                    </p>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="copyright-year">2024</span> Additive Artisan. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Site Configuration (load first) -->
+        <script src="js/config.js"></script>
+
+        <!-- Product Management Scripts -->
+        <script src="js/utils.js"></script>
+        <script src="js/api_helpers.js"></script>
+        <script src="js/products.js"></script>
+        <script src="js/order_tracker.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

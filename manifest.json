@@ -1,0 +1,25 @@
+{
+  "name": "Additive Artisan - Cutsie 3D Printing",
+  "short_name": "Additive Artisan",
+  "description": "Cutsie 3D printing with a personal touch. Handcrafted products for MTG players and tabletop gaming enthusiasts.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#84cdc7",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/dvupmrtsm/image/upload/v1765384928/logo_bjbaeu.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://res.cloudinary.com/dvupmrtsm/image/upload/v1765384929/favicon_nwcktp.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["shopping", "lifestyle"],
+  "screenshots": []
+}
